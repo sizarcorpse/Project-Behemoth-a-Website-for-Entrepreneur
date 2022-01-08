@@ -2,8 +2,11 @@ function pxToRem(value) {
   return `${value / 16}rem`;
 }
 
-function responsiveFontSizes({ sm, md, lg }) {
+function responsiveFontSizes({ xs, sm, md, lg }) {
   return {
+    "@media (min-width:0px)": {
+      fontSize: pxToRem(xs),
+    },
     "@media (min-width:600px)": {
       fontSize: pxToRem(sm),
     },
@@ -31,9 +34,9 @@ const typography = {
   },
   h2: {
     fontWeight: 600,
-    lineHeight: 1.3,
+    lineHeight: 1,
     fontSize: pxToRem(48),
-    ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
+    ...responsiveFontSizes({ xs: 32, sm: 36, md: 40, lg: 48 }),
   },
   h3: {
     fontWeight: 600,
@@ -48,7 +51,7 @@ const typography = {
     ...responsiveFontSizes({ sm: 20, md: 24, lg: 24 }),
   },
   h5: {
-    fontWeight: 600,
+    fontWeight: 400,
     lineHeight: 1.5,
     fontSize: pxToRem(18),
     ...responsiveFontSizes({ sm: 19, md: 20, lg: 20 }),

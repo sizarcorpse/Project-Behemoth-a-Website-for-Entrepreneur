@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { Grid, Container } from "@mui/material";
-import { HomeHero, HomeWhat } from "components/home";
+import { HomeHero, HomeWhat, HomeHow } from "components/home";
 
-export default function Home() {
+const Home = (props) => {
   return (
     <Grid container component="main">
       <Head>
@@ -42,6 +42,14 @@ export default function Home() {
       <Grid item xs={12}>
         <HomeWhat />
       </Grid>
+
+      <Grid item xs={12} sx={{ backgroundColor: "primary.blue" }}>
+        <Container>
+          <HomeHow />
+        </Container>
+      </Grid>
     </Grid>
   );
-}
+};
+
+export default Home;

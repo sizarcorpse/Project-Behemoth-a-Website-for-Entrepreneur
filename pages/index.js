@@ -1,6 +1,13 @@
 import Head from "next/head";
 import { Grid, Container, useTheme, useMediaQuery } from "@mui/material";
-import { HomeHero, HomeWhat, HomeHow, HomePhotoBreak } from "components/home";
+import {
+  HomeHero,
+  HomeWhat,
+  HomeHow,
+  HomePhotoBreak,
+  HomeVideo,
+  HomeWho,
+} from "components/home";
 
 const Home = (props) => {
   const matches = useMediaQuery(useTheme().breakpoints.down("sm"));
@@ -73,6 +80,35 @@ const Home = (props) => {
           }}
         >
           <HomePhotoBreak />
+        </Container>
+      </Grid>
+      <Grid item xs={12} sx={{ backgroundColor: "primary.white" }}>
+        <Container>
+          <HomeVideo />
+        </Container>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sx={{
+          width: "100%",
+          height: "100%",
+
+          backgroundImage: `url("/home/hp_h_bg-overlay.svg")`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+
+          backgroundColor: "primary.yellow",
+        }}
+      >
+        <Container
+          sx={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <HomeWho />
         </Container>
       </Grid>
     </Grid>

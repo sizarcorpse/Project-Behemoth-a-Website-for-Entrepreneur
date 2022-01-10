@@ -40,9 +40,9 @@ const typography = {
   },
   h3: {
     fontWeight: 600,
-    lineHeight: 1.5,
+    lineHeight: 1.4,
     fontSize: pxToRem(32),
-    ...responsiveFontSizes({ sm: 26, md: 30, lg: 32 }),
+    ...responsiveFontSizes({ xs: 24, sm: 24, md: 28, lg: 32 }),
   },
   h4: {
     fontWeight: 300,

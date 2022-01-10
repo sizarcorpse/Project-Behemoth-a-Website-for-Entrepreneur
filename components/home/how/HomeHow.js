@@ -126,17 +126,18 @@ const howItems = [
 const HomeHow = (props) => {
   const {} = props;
   const [hows, setHows] = useState(howItems);
-  const [barHeight, setBarHeight] = useState(0);
+  const [barHeight, setBarHeight] = useState(parseInt(0));
   const totalContent = useRef(null);
   const matches = useMediaQuery(useTheme().breakpoints.down("md"));
 
   useEffect(() => {
     function getScreenSize() {
-      const totalContentHeight = totalContent.current.offsetHeight;
+      const totalContentHeight = totalContent.current.clientHeight;
       const lastChildHeight =
         totalContent.current.querySelector(".item:last-child").offsetHeight;
-      const barHeight = totalContentHeight - lastChildHeight;
-      setBarHeight(barHeight);
+      const barHeight =
+        parseInt(totalContentHeight) - parseInt(lastChildHeight);
+      setBarHeight(parseInt(barHeight + 30));
     }
 
     getScreenSize();

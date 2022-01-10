@@ -45,7 +45,7 @@ const LinkHover = styled(Link)(({ theme }) => ({
 }));
 
 const ImageBox = styled(Box)(({ theme }) => ({
-  flex: "1 1 calc(30%)",
+  flex: "1 1 calc(35%)",
   display: "flex",
   alignItems: "flex-end",
 
@@ -86,11 +86,11 @@ function HomeHero() {
   return (
     <Hero>
       <ContentBox>
-        <Typography variant="h2" color="primary.blue">
+        <Typography variant="h2" component="h1" color="primary.blue">
           Project Behemoth supports you to become a successful entrepreneur,
           wherever you are on your journey.
         </Typography>
-        <Typography variant="h5" color="primary.blue">
+        <Typography variant="h5" component="p" color="primary.blue">
           Curious? Come on let’s
           <LinkHover href="/contact">
             get inFormation! <ArrowRightAltIcon fontSize="large" />
@@ -108,10 +108,12 @@ function HomeHero() {
             objectFit="cover"
           />
           <Box className="caption">
-            <Typography variant="subtitle1" color="primary.black">
+            <Typography variant="subtitle1" component="p" color="primary.black">
               MICHAELA, 17
             </Typography>
-            <Typography variant="subtitle2">Pilot Learner</Typography>
+            <Typography variant="subtitle2" component="p">
+              Pilot Learner
+            </Typography>
           </Box>
         </Box>
       </ImageBox>

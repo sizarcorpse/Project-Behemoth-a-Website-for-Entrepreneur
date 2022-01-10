@@ -28,13 +28,13 @@ const typography = {
   fontWeightBold: 700,
   h1: {
     fontWeight: 600,
-    lineHeight: 1.2,
+    lineHeight: 1.25,
     fontSize: pxToRem(80),
-    ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
+    ...responsiveFontSizes({ xs: 36, sm: 40, md: 48, lg: 64 }),
   },
   h2: {
     fontWeight: 600,
-    lineHeight: 1,
+    lineHeight: 1.25,
     fontSize: pxToRem(48),
     ...responsiveFontSizes({ xs: 32, sm: 36, md: 40, lg: 48 }),
   },
@@ -48,7 +48,7 @@ const typography = {
     fontWeight: 300,
     lineHeight: 1.5,
     fontSize: pxToRem(24),
-    ...responsiveFontSizes({ sm: 20, md: 24, lg: 24 }),
+    ...responsiveFontSizes({ xs: 18, sm: 20, md: 22, lg: 24 }),
   },
   h5: {
     fontWeight: 400,

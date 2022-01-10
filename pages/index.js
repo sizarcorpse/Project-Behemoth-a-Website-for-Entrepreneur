@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Grid, Container } from "@mui/material";
-import { HomeHero } from "components/home";
+import { HomeHero, HomeWhat } from "components/home";
 
 export default function Home() {
   return (
@@ -31,12 +31,16 @@ export default function Home() {
       >
         <Container
           sx={{
+            width: "100%",
             height: "100vh",
             maxHeight: "802px",
           }}
         >
           <HomeHero />
         </Container>
+      </Grid>
+      <Grid item xs={12}>
+        <HomeWhat />
       </Grid>
     </Grid>
   );

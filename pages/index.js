@@ -1,5 +1,11 @@
 import Head from "next/head";
-import { Grid, Container, useTheme, useMediaQuery } from "@mui/material";
+import {
+  Grid,
+  Container,
+  styled,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 
 import {
   HomeHero,
@@ -11,7 +17,18 @@ import {
   HomeContact,
 } from "components/home";
 
-import { PBButton } from "components/ui";
+const ContainerStyled = styled(Container)(({ theme }) => ({
+  padding: theme.spacing(10),
+  [theme.breakpoints.down("lg")]: {
+    padding: theme.spacing(8),
+  },
+  [theme.breakpoints.down("md")]: {
+    padding: theme.spacing(8),
+  },
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(4),
+  },
+}));
 
 const Home = (props) => {
   const matches = useMediaQuery(useTheme().breakpoints.down("sm"));
@@ -41,15 +58,16 @@ const Home = (props) => {
           backgroundColor: "primary.yellow",
         }}
       >
-        <Container
+        <ContainerStyled
           sx={{
             width: "100%",
             height: "100vh",
             maxHeight: "802px",
+            paddingBottom: "0 !important",
           }}
         >
           <HomeHero />
-        </Container>
+        </ContainerStyled>
       </Grid>
       <Grid item xs={12}>
         <HomeWhat />

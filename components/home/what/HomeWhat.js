@@ -37,13 +37,15 @@ const ContentBox = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignContent: "flex-start",
   width: "100%",
-  padding: theme.spacing(5, 10),
-
+  padding: theme.spacing(10),
   [theme.breakpoints.down("lg")]: {
-    padding: theme.spacing(5, 4, 0, 4),
+    padding: theme.spacing(8),
   },
   [theme.breakpoints.down("md")]: {
-    padding: theme.spacing(5, 0),
+    padding: theme.spacing(8),
+  },
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(4),
   },
 
   "& .container": {
@@ -52,6 +54,7 @@ const ContentBox = styled(Box)(({ theme }) => ({
     flexDirection: "column",
     alignItems: "flex-start",
     gap: theme.spacing(2),
+    padding: theme.spacing(0),
     "& .title": {
       position: "relative",
       maxWidth: "17ch",
@@ -68,6 +71,12 @@ const ContentBox = styled(Box)(({ theme }) => ({
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         zIndex: -1,
+        [theme.breakpoints.down("lg")]: {
+          top: -7,
+          left: -200,
+          width: 570,
+          height: 200,
+        },
         [theme.breakpoints.down("md")]: {
           left: -40,
           top: -20,
@@ -102,15 +111,17 @@ function HomeWhat() {
       idea: "You’ll connect with experienced entrepreneurs to expand your network.",
     },
   ]);
-  const matches = useMediaQuery(useTheme().breakpoints.down("md"));
+  const xl = useMediaQuery(useTheme().breakpoints.down("xl"));
+  const lg = useMediaQuery(useTheme().breakpoints.down("lg"));
+  const md = useMediaQuery(useTheme().breakpoints.down("md"));
   return (
     <What>
       <ImageBox>
         <Box>
           <Image
-            src={matches ? "/home/hp-w-photo-m.png" : "/home/hp-w-photo.png"}
-            width={matches ? 900 : 730}
-            height={matches ? 520 : 1040}
+            src={md ? "/home/hp-w-photo-m.png" : "/home/hp-w-photo.png"}
+            width={md ? 900 : lg ? 315 : xl ? 421 : 730}
+            height={md ? 520 : lg ? 705 : xl ? 700 : 1040}
             alt="What is Project Behemoth"
             quality={100}
             objectFit="cover"

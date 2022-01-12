@@ -112,11 +112,6 @@ const HomeContact = () => {
   const matchesSm = useMediaQuery(useTheme().breakpoints.down("sm"));
   const matchesMd = useMediaQuery(useTheme().breakpoints.down("md"));
 
-  // generate a function calculate ratio between two numbers
-  const getRatio = (num1, num2) => {
-    return num1 / num2;
-  };
-  console.log(getRatio(557, 605));
   return (
     <Contact>
       <ContentBox>

@@ -4,12 +4,10 @@ import {
   Box,
   styled,
   Typography,
-  Link,
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import { PBButton } from "components/ui";
 const Hero = styled(Box)(({ theme }) => ({
   height: "100%",
   width: "100%",
@@ -32,16 +30,9 @@ const ContentBox = styled(Box)(({ theme }) => ({
     gap: theme.spacing(3),
   },
 
-  "& h2": {
+  "& h1": {
     maxWidth: "23ch",
   },
-}));
-
-const LinkHover = styled(Link)(({ theme }) => ({
-  fontWeight: 600,
-  display: "inline-flex ",
-  alignItems: "center",
-  justifyContent: "center",
 }));
 
 const ImageBox = styled(Box)(({ theme }) => ({
@@ -82,7 +73,8 @@ const ImageBox = styled(Box)(({ theme }) => ({
 
 function HomeHero() {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesMd = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesXs = useMediaQuery("(max-width:440px)", { noSsr: true });
   return (
     <Hero>
       <ContentBox>
@@ -90,20 +82,17 @@ function HomeHero() {
           Project Behemoth supports you to become a successful entrepreneur,
           wherever you are on your journey.
         </Typography>
-        <Typography variant="h5" component="p" color="primary.blue">
-          Curious? Come on let’s
-          <LinkHover href="/contact">
-            get inFormation! <ArrowRightAltIcon fontSize="large" />
-          </LinkHover>
-        </Typography>
+        <PBButton linkTo="/contact" color="blue" bold>
+          Curious? Come on let’s get inFormation!
+        </PBButton>
       </ContentBox>
       <ImageBox>
         <Box className="imageArea">
           <Image
             src="/home/hp-h-person.png"
             alt=""
-            width={matches ? 255 : 342}
-            height={matches ? 338 : 453}
+            width={matchesXs ? 255 : matchesMd ? 290 : 342}
+            height={matchesXs ? 338 : matchesMd ? 384 : 453}
             quality={100}
             objectFit="cover"
           />

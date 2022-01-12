@@ -4,3 +4,4 @@ export { default as HomeHow } from "./how/HomeHow";
 export { default as HomePhotoBreak } from "./photoBreak/HomePhotoBreak";
 export { default as HomeVideo } from "./video/HomeVideo";
 export { default as HomeWho } from "./who/HomeWho";
+export { default as HomeContact } from "./contact/HomeContact";

@@ -7,6 +7,7 @@ import {
   HomePhotoBreak,
   HomeVideo,
   HomeWho,
+  HomeContact,
 } from "components/home";
 
 const Home = (props) => {
@@ -110,6 +111,9 @@ const Home = (props) => {
         >
           <HomeWho />
         </Container>
+      </Grid>
+      <Grid item xs={12} sx={{ backgroundColor: "primary.blue" }}>
+        <HomeContact />
       </Grid>
     </Grid>
   );

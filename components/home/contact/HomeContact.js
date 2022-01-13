@@ -1,4 +1,3 @@
-import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,36 +6,50 @@ import {
   styled,
   Container,
   Typography,
-  List,
-  ListItem,
-  ListItemIcon,
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-import { get } from "lodash";
+import { PBButton } from "components/ui";
 
 const Contact = styled(Box)(({ theme }) => ({
   display: "flex",
   height: "100vh",
   maxHeight: "718px",
   overflow: "hidden",
+  [theme.breakpoints.down("lg")]: {
+    maxHeight: "650px",
+    padding: theme.spacing(0, 0, 0, 4),
+  },
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     gap: theme.spacing(5),
+    maxHeight: "650px",
+    padding: theme.spacing(8, 0, 0, 8),
+  },
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(4, 0, 0, 4),
   },
 }));
 const ContentBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flex: `1 1 calc(50%)`,
   alignItems: "center",
+  [theme.breakpoints.down("sm")]: {
+    alignItems: "flex-start",
+  },
   "& .container": {
     marginRight: 0,
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "flex-start",
+    zIndex: 10,
     [theme.breakpoints.down("md")]: {
       marginRight: "auto",
+      alignItems: "center",
+      padding: theme.spacing(0, 8, 0, 0),
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(0, 4, 0, 0),
     },
     "& h2": {
       maxWidth: "10ch",
@@ -101,13 +114,6 @@ const ImageBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const LinkHover = styled(Link)(({ theme }) => ({
-  fontWeight: 600,
-  display: "inline-flex ",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
 const HomeContact = () => {
   const matchesSm = useMediaQuery(useTheme().breakpoints.down("sm"));
   const matchesMd = useMediaQuery(useTheme().breakpoints.down("md"));
@@ -119,12 +125,9 @@ const HomeContact = () => {
           <Typography variant="h1" component="h2" color="primary.white">
             Okay students, let’s get information.
           </Typography>
-          <Typography variant="h5" component="span" color="primary.yellow">
-            <Link href={`/contact `} color="primary.yellow">
-              contact
-            </Link>
-            <ArrowRightAltIcon fontSize="large" />
-          </Typography>
+          <PBButton linkTo="/contact" color="yellow">
+            contact
+          </PBButton>
         </Container>
       </ContentBox>
       <ImageBox>

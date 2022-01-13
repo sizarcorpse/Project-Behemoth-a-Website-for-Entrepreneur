@@ -14,7 +14,7 @@ const arrows = {
 
 const PBButtonStyled = styled(Box)(({ theme, color, bold }) => ({
   position: "relative",
-  display: "inline-flex",
+  display: "block",
   gap: theme.spacing(1),
 
   "& a": {
@@ -26,7 +26,7 @@ const PBButtonStyled = styled(Box)(({ theme, color, bold }) => ({
   "& .arrow": {
     position: "relative",
     top: 0,
-    left: 0,
+    left: 10,
     transition: "all 0.3s ease-in-out",
   },
 

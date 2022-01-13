@@ -20,7 +20,7 @@ import {
 const ContainerStyled = styled(Container)(({ theme }) => ({
   padding: theme.spacing(10),
   [theme.breakpoints.down("lg")]: {
-    padding: theme.spacing(8),
+    padding: theme.spacing(8, 4),
   },
   [theme.breakpoints.down("md")]: {
     padding: theme.spacing(8),

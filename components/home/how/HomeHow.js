@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import Link from "next/link";
 import Image from "next/image";
 import {
   Box,
@@ -10,7 +9,6 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { PBButton } from "components/ui";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 const How = styled(Box)(({ theme }) => ({
   display: "flex",

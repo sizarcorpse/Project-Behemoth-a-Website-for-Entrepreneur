@@ -1,18 +1,6 @@
-import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import Link from "next/link";
 import Image from "next/image";
-import {
-  Box,
-  styled,
-  Container,
-  Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, styled, useTheme, useMediaQuery } from "@mui/material";
 
 const PhotoBreak = styled(Box)(({ theme }) => ({
   height: "100%",

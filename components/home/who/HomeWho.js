@@ -1,15 +1,9 @@
-import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import Link from "next/link";
 import Image from "next/image";
 import {
   Box,
   styled,
-  Container,
   Typography,
-  List,
-  ListItem,
-  ListItemIcon,
   useTheme,
   useMediaQuery,
 } from "@mui/material";
@@ -17,10 +11,16 @@ import {
 const Who = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  gap: theme.spacing(2),
-  padding: theme.spacing(16, 0),
+  gap: theme.spacing(4),
+  padding: theme.spacing(10, 0),
+  [theme.breakpoints.down("lg")]: {
+    padding: theme.spacing(10, 4),
+  },
   [theme.breakpoints.down("md")]: {
-    padding: theme.spacing(5, 0),
+    padding: theme.spacing(8),
+  },
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(4, 2),
   },
 }));
 
@@ -32,7 +32,7 @@ const ContentBox = styled(Box)(({ theme, barHeight }) => ({
   gap: theme.spacing(5),
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
-    gap: theme.spacing(8),
+    gap: theme.spacing(6),
   },
 
   "& .item": {

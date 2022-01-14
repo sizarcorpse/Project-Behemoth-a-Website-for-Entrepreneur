@@ -5,6 +5,7 @@ import ThemeConfig from "themes/";
 import { CacheProvider } from "@emotion/react";
 import { createEmotionCache } from "utils/";
 import { SWRConfig } from "swr";
+import { Footer } from "components/layouts";
 const clientSideEmotionCache = createEmotionCache();
 export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
@@ -21,6 +22,7 @@ export default function MyApp(props) {
           }}
         >
           <Component {...pageProps} />
+          <Footer />
         </SWRConfig>
       </ThemeConfig>
     </CacheProvider>

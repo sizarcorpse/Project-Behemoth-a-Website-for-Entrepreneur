@@ -138,7 +138,12 @@ const PBAppBar = (props) => {
         <AppBarStyled elevation={0} color={""}>
           <ToolbarStyled>
             <Box sx={{ display: "flex", flexGrow: 1 }}>
-              <Image src="/assets/logo/sl.svg" width={100} height={35} />
+              <Image
+                src="/assets/logo/sl.svg"
+                width={100}
+                height={35}
+                alt="project behemoth"
+              />
             </Box>
             <MenuBox>
               <Stack

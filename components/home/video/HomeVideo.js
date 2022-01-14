@@ -44,7 +44,7 @@ const HomeVideo = () => {
     <Video>
       <VideoContent>
         <PlayCircleIcon sx={{ fontSize: 100, color: "primary.blue" }} />
-        <Typography variant="h5" color="primary.blue">
+        <Typography variant="h5" component="h2" color="primary.blue">
           Intro Video Headline Here
         </Typography>
       </VideoContent>

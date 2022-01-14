@@ -135,7 +135,10 @@ const PBAppBar = (props) => {
   return (
     <>
       <HideOnScroll {...props}>
-        <AppBarStyled elevation={0} color={""}>
+        <AppBarStyled
+          elevation={0}
+          sx={{ background: "rgba(255,255,255,0.98)" }}
+        >
           <ToolbarStyled>
             <Box sx={{ display: "flex", flexGrow: 1 }}>
               <Image

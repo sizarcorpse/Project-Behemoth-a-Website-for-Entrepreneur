@@ -13,6 +13,7 @@ const Hero = styled(Box)(({ theme }) => ({
   width: "100%",
   display: "flex",
   flexDirection: "row",
+  height: "802px",
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     justifyContent: "center",
@@ -26,6 +27,7 @@ const ContentBox = styled(Box)(({ theme }) => ({
   alignItems: "flex-start",
   gap: theme.spacing(6),
   flex: "1 1 calc(70%)",
+
   [theme.breakpoints.down("md")]: {
     gap: theme.spacing(3),
   },
@@ -90,7 +92,7 @@ function HomeHero() {
         <Box className="imageArea">
           <Image
             src="/home/hp-h-person.png"
-            alt=""
+            alt="project behemoth"
             width={matchesXs ? 255 : matchesMd ? 290 : 342}
             height={matchesXs ? 338 : matchesMd ? 384 : 453}
             quality={100}

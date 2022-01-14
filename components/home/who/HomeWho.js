@@ -85,6 +85,7 @@ const HomeWho = () => {
               width={matches ? 128 : 160}
               height={matches ? 128 : 160}
               quality={100}
+              alt="project behemoth"
             />
             <Typography
               variant="h3"

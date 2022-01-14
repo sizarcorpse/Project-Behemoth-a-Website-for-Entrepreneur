@@ -25,6 +25,8 @@ const PBButtonStyled = styled(Box)(({ theme, color, bold }) => ({
   },
   "& .arrow": {
     position: "relative",
+    width: 34,
+    height: 12,
     top: 0,
     left: 10,
     transition: "all 0.3s ease-in-out",

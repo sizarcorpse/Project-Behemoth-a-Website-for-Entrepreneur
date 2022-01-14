@@ -20,6 +20,7 @@ const HomePhotoBreak = () => {
         width={matches ? 328 : 445}
         height={matches ? 413 : 561}
         quality={100}
+        alt="project behemoth"
       />
     </PhotoBreak>
   );

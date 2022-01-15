@@ -12,16 +12,6 @@ const Who = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   gap: theme.spacing(4),
-  padding: theme.spacing(10, 0),
-  [theme.breakpoints.down("lg")]: {
-    padding: theme.spacing(10, 4),
-  },
-  [theme.breakpoints.down("md")]: {
-    padding: theme.spacing(8),
-  },
-  [theme.breakpoints.down("sm")]: {
-    padding: theme.spacing(4, 2),
-  },
 }));
 
 const ContentBox = styled(Box)(({ theme, barHeight }) => ({
@@ -86,6 +76,7 @@ const HomeWho = () => {
               height={matches ? 128 : 160}
               quality={100}
               alt="project behemoth"
+              priority={true}
             />
             <Typography
               variant="h3"

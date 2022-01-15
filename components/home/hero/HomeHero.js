@@ -9,8 +9,6 @@ import {
 } from "@mui/material";
 import { PBButton } from "components/ui";
 const Hero = styled(Box)(({ theme }) => ({
-  height: "100%",
-  width: "100%",
   display: "flex",
   flexDirection: "row",
   height: "802px",

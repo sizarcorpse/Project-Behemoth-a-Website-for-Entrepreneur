@@ -16,19 +16,16 @@ import {
   HomeWho,
   HomeContact,
 } from "components/home";
-
-import { PBAppBar } from "components/ui";
-
 const ContainerStyled = styled(Container)(({ theme }) => ({
-  padding: theme.spacing(10),
+  padding: theme.spacing(10, 0),
   [theme.breakpoints.down("lg")]: {
-    padding: theme.spacing(8, 4),
+    padding: theme.spacing(8, 8),
   },
   [theme.breakpoints.down("md")]: {
-    padding: theme.spacing(8),
+    padding: theme.spacing(8, 8),
   },
   [theme.breakpoints.down("sm")]: {
-    padding: theme.spacing(4),
+    padding: theme.spacing(4, 4),
   },
 }));
 
@@ -49,23 +46,16 @@ const Home = (props) => {
         item
         xs={12}
         sx={{
-          width: "100%",
-          height: "100%",
-
           backgroundImage: `url("/home/hp_h_bg-overlay.svg")`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
-
           backgroundColor: "primary.yellow",
         }}
       >
         <ContainerStyled
           sx={{
-            width: "100%",
-            // height: "100vh",
-            // maxHeight: "802px",
-            paddingBottom: "0 !important",
+            pb: "0 !important",
           }}
         >
           <HomeHero />
@@ -76,26 +66,24 @@ const Home = (props) => {
       </Grid>
 
       <Grid item xs={12} sx={{ backgroundColor: "primary.blue" }}>
-        <Container>
+        <ContainerStyled>
           <HomeHow />
-        </Container>
+        </ContainerStyled>
       </Grid>
       <Grid
         item
         xs={12}
         sx={{
-          width: "100%",
-          height: "100%",
           backgroundImage: `url("/home/hp-pb-bg.svg")`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
-        <Container
+        <ContainerStyled
           sx={{
-            width: "100%",
             height: "100vh",
+            pb: "0 !important",
             maxHeight: matches ? "513px" : "625px",
             backgroundImage: `url("/home/hp-pb-ov.svg")`,
             backgroundRepeat: "no-repeat",
@@ -104,36 +92,27 @@ const Home = (props) => {
           }}
         >
           <HomePhotoBreak />
-        </Container>
+        </ContainerStyled>
       </Grid>
       <Grid item xs={12} sx={{ backgroundColor: "primary.white" }}>
-        <Container>
+        <ContainerStyled>
           <HomeVideo />
-        </Container>
+        </ContainerStyled>
       </Grid>
       <Grid
         item
         xs={12}
         sx={{
-          width: "100%",
-          height: "100%",
-
           backgroundImage: `url("/home/hp_h_bg-overlay.svg")`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
-
           backgroundColor: "primary.yellow",
         }}
       >
-        <Container
-          sx={{
-            width: "100%",
-            height: "100%",
-          }}
-        >
+        <ContainerStyled>
           <HomeWho />
-        </Container>
+        </ContainerStyled>
       </Grid>
       <Grid item xs={12} sx={{ backgroundColor: "primary.blue" }}>
         <HomeContact />

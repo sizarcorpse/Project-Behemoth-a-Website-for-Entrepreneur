@@ -22,8 +22,18 @@ const ToolbarStyled = styled(Toolbar)(({ theme }) => ({
   width: "100%",
   maxWidth: "1200px",
   margin: "0 auto",
+  // [theme.breakpoints.down("lg")]: {
+  //   padding: theme.spacing(0, 4),
+  // },
+  // [theme.breakpoints.down("md")]: {
+  //   padding: theme.spacing(0, 8),
+  // },
+  // [theme.breakpoints.down("sm")]: {
+  //   padding: theme.spacing(0, 4),
+  // },
+  padding: theme.spacing(0, 10),
   [theme.breakpoints.down("lg")]: {
-    padding: theme.spacing(0, 4),
+    padding: theme.spacing(0, 8),
   },
   [theme.breakpoints.down("md")]: {
     padding: theme.spacing(0, 8),

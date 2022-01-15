@@ -125,6 +125,7 @@ function HomeWhat() {
             alt="What is Project Behemoth"
             quality={100}
             objectFit="cover"
+            priority={true}
           />
         </Box>
       </ImageBox>

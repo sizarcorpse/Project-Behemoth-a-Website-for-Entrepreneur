@@ -27,6 +27,7 @@ const Footer = (props) => {
               width="100"
               height="35"
               alt="project behemoth"
+              priority={true}
             />
           </ContentBox>
         </Container>

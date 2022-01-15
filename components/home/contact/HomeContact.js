@@ -138,6 +138,7 @@ const HomeContact = () => {
             height={matchesSm ? 350 : matchesMd ? 400 : 605}
             quality={100}
             alt="project behemoth"
+            priority={true}
           />
         </Box>
       </ImageBox>

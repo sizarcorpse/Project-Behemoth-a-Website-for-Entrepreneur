@@ -97,6 +97,7 @@ function HomeHero() {
             width={matchesXs ? 255 : matchesMd ? 290 : 342}
             height={matchesXs ? 338 : matchesMd ? 384 : 453}
             quality={100}
+            priority={true}
             objectFit="cover"
           />
           <Box className="caption">

@@ -146,6 +146,7 @@ const PBAppBar = (props) => {
                 width={100}
                 height={35}
                 alt="project behemoth"
+                priority={true}
               />
             </Box>
             <MenuBox>

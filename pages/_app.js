@@ -5,7 +5,7 @@ import ThemeConfig from "themes/";
 import { CacheProvider } from "@emotion/react";
 import { createEmotionCache } from "utils/";
 import { SWRConfig } from "swr";
-import { Footer } from "components/layouts";
+import { PBLayout } from "components/layouts";
 const clientSideEmotionCache = createEmotionCache();
 export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
@@ -21,8 +21,9 @@ export default function MyApp(props) {
             fetcher: (url) => fetch(url).then((r) => r.json()),
           }}
         >
-          <Component {...pageProps} />
-          <Footer />
+          <PBLayout>
+            <Component {...pageProps} />
+          </PBLayout>
         </SWRConfig>
       </ThemeConfig>
     </CacheProvider>

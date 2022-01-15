@@ -149,16 +149,27 @@ const PBAppBar = (props) => {
               />
             </Box>
             <MenuBox>
-              <Stack
-                spacing={2}
-                direction="row"
-                spacing={4}
-                justifyContent="flex-end"
-                alignItems="center"
-                className="stack"
-              >
-                {!matches ? (
-                  navigationItems.map((item, index) => (
+              {matches ? (
+                <Stack
+                  spacing={2}
+                  direction="row"
+                  spacing={4}
+                  justifyContent="flex-end"
+                  alignItems="center"
+                  className="stack"
+                >
+                  <MenuIcon fontSize="large" sx={{ color: "primary.black" }} />
+                </Stack>
+              ) : (
+                <Stack
+                  spacing={2}
+                  direction="row"
+                  spacing={4}
+                  justifyContent="flex-end"
+                  alignItems="center"
+                  className="stack"
+                >
+                  {navigationItems.map((item, index) => (
                     <Typography
                       variant="h5"
                       color="primary.black"
@@ -168,11 +179,9 @@ const PBAppBar = (props) => {
                     >
                       <Link href={item.url}>{item.title}</Link>
                     </Typography>
-                  ))
-                ) : (
-                  <MenuIcon fontSize="large" />
-                )}
-              </Stack>
+                  ))}
+                </Stack>
+              )}
             </MenuBox>
           </ToolbarStyled>
         </AppBarStyled>

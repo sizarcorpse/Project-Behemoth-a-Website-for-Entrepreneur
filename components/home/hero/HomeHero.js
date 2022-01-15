@@ -76,7 +76,7 @@ const ImageBox = styled(Box)(({ theme }) => ({
 function HomeHero() {
   const theme = useTheme();
   const matchesMd = useMediaQuery(theme.breakpoints.down("md"));
-  const matchesXs = useMediaQuery("(max-width:440px)", { noSsr: true });
+  const matchesXs = useMediaQuery("(max-width:440px)");
   return (
     <Hero>
       <ContentBox>

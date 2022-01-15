@@ -22,15 +22,7 @@ const ToolbarStyled = styled(Toolbar)(({ theme }) => ({
   width: "100%",
   maxWidth: "1200px",
   margin: "0 auto",
-  // [theme.breakpoints.down("lg")]: {
-  //   padding: theme.spacing(0, 4),
-  // },
-  // [theme.breakpoints.down("md")]: {
-  //   padding: theme.spacing(0, 8),
-  // },
-  // [theme.breakpoints.down("sm")]: {
-  //   padding: theme.spacing(0, 4),
-  // },
+
   padding: theme.spacing(0, 10),
   [theme.breakpoints.down("lg")]: {
     padding: theme.spacing(0, 8),
@@ -132,7 +124,7 @@ function HideOnScroll(props) {
 }
 
 let navigationItems = [
-  { title: "How It Work", url: "/how-it-work", type: "link", order: 1 },
+  { title: "How It Works", url: "/how-it-works", type: "link", order: 1 },
   { title: "Our Community", url: "/our-community", type: "link", order: 2 },
   { title: "Our Partners", url: "/our-partners", type: "link", order: 3 },
   { title: "Get In Touch", url: "/get-in-touch", type: "button", order: 4 },
@@ -151,13 +143,15 @@ const PBAppBar = (props) => {
         >
           <ToolbarStyled>
             <Box sx={{ display: "flex", flexGrow: 1 }}>
-              <Image
-                src="/assets/logo/sl.svg"
-                width={100}
-                height={35}
-                alt="project behemoth"
-                priority={true}
-              />
+              <Link href="/">
+                <Image
+                  src="/assets/logo/sl.svg"
+                  width={100}
+                  height={35}
+                  alt="project behemoth"
+                  priority={true}
+                />
+              </Link>
             </Box>
             <MenuBox>
               {matches ? (

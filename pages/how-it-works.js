@@ -7,7 +7,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
-import { HiwHero } from "components/howItWorks";
+import { HiwHero, HiwModel } from "components/howItWorks";
 const ContainerStyled = styled(Container)(({ theme }) => ({
   padding: theme.spacing(10, 0),
   [theme.breakpoints.down("lg")]: {
@@ -77,6 +77,12 @@ const HowItWorks = (props) => {
           <HiwHero />
         </ContainerStyled>
       </GridStyled>
+
+      <Grid item xs={12}>
+        <ContainerStyled>
+          <HiwModel />
+        </ContainerStyled>
+      </Grid>
     </Grid>
   );
 };

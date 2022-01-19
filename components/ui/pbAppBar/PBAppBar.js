@@ -35,7 +35,7 @@ const ToolbarStyled = styled(Toolbar)(({ theme }) => ({
   },
 }));
 const MenuBox = styled(Box)(({ theme }) => ({
-  "& .stack": {
+  "& .stackItems": {
     "& a": {
       textDecoration: "none",
       fontWeight: "bold",
@@ -143,15 +143,13 @@ const PBAppBar = (props) => {
         >
           <ToolbarStyled>
             <Box sx={{ display: "flex", flexGrow: 1 }}>
-              <Link href="/">
-                <Image
-                  src="/assets/logo/sl.svg"
-                  width={100}
-                  height={35}
-                  alt="project behemoth"
-                  priority={true}
-                />
-              </Link>
+              <Image
+                src="/assets/logo/sl.svg"
+                width={100}
+                height={35}
+                alt="project behemoth"
+                priority={true}
+              />
             </Box>
             <MenuBox>
               {matches ? (
@@ -161,7 +159,7 @@ const PBAppBar = (props) => {
                   spacing={4}
                   justifyContent="flex-end"
                   alignItems="center"
-                  className="stack"
+                  className="stackItems"
                 >
                   <MenuIcon fontSize="large" sx={{ color: "primary.black" }} />
                 </Stack>
@@ -172,7 +170,7 @@ const PBAppBar = (props) => {
                   spacing={4}
                   justifyContent="flex-end"
                   alignItems="center"
-                  className="stack"
+                  className="stackItems"
                 >
                   {navigationItems.map((item, index) => (
                     <Typography

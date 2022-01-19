@@ -1,5 +1,5 @@
 import { Box, styled, Typography } from "@mui/material";
-import { PBButton } from "components/ui";
+
 const Hero = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",

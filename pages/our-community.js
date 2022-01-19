@@ -7,7 +7,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
-import { OcHero } from "components/ourCommunity";
+import { OcHero, OcLearners, OcMentors, OcCrew } from "components/ourCommunity";
 
 const ContainerStyled = styled(Container)(({ theme }) => ({
   padding: theme.spacing(10, 0),
@@ -45,9 +45,24 @@ const OurCommunity = () => {
           backgroundColor: "primary.yellow",
         }}
       >
-        <Container>
+        <ContainerStyled>
           <OcHero />
-        </Container>
+        </ContainerStyled>
+      </Grid>
+      <Grid item xs={12}>
+        <ContainerStyled>
+          <OcLearners />
+        </ContainerStyled>
+      </Grid>
+      <Grid item xs={12} sx={{ backgroundColor: "primary.green" }}>
+        <ContainerStyled>
+          <OcMentors />
+        </ContainerStyled>
+      </Grid>
+      <Grid item xs={12}>
+        <ContainerStyled>
+          <OcCrew />
+        </ContainerStyled>
       </Grid>
     </Grid>
   );

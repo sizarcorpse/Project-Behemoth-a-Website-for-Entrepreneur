@@ -6,10 +6,6 @@ const Video = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   gap: theme.spacing(2),
-  // padding: theme.spacing(10, 0),
-  // [theme.breakpoints.down("md")]: {
-  //   padding: theme.spacing(8, 0),
-  // },
 }));
 const VideoContent = styled(Box)(({ theme }) => ({
   display: "flex",

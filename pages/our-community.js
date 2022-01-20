@@ -59,7 +59,7 @@ const OurCommunity = () => {
           <OcMentors />
         </ContainerStyled>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} sx={{ backgroundColor: "primary.blue" }}>
         <ContainerStyled>
           <OcCrew />
         </ContainerStyled>

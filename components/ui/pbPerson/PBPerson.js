@@ -20,7 +20,10 @@ const PBPersonStyled = styled(Box)(({ theme, isLearner, isMentor }) => ({
     : isMentor
     ? theme.palette.primary.black
     : "transparent",
-  gap: theme.spacing(4),
+  gap: theme.spacing(6),
+  [theme.breakpoints.down("md")]: {
+    maxWidth: "300px",
+  },
 }));
 
 const LearnerBox = styled(Box)(({ theme }) => ({
@@ -209,6 +212,7 @@ const PBPerson = (props) => {
       isLearner={learner && true}
       isMentor={mentors && true}
       isCrew={crew && true}
+      className="pbPerson"
     >
       <Box sx={{ maxWidth: 300 }}>{av}</Box>
       {learner && <Learner {...learner} />}

@@ -80,6 +80,7 @@ const PBAvatarStyled = styled(Box)(({ theme, top, bottom }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  zIndex: 1,
   "& .stylingWrapper": {
     position: "relative",
     width: "100%",
@@ -120,7 +121,7 @@ const PBAvatarStyled = styled(Box)(({ theme, top, bottom }) => ({
       backgroundRepeat: "no-repeat",
       backgroundPosition:
         bottom && bottom.position === "left" ? "bottom left" : "bottom right",
-      zIndex: bottom && bottom.under ? -1 : 1,
+      zIndex: bottom && bottom.under === true ? -1 : 1,
       [theme.breakpoints.down("lg")]: {
         width: "35%",
         height: "35%",

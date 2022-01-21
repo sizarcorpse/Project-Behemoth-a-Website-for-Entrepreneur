@@ -7,7 +7,14 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
-import { OcHero, OcLearners, OcMentors, OcCrew } from "components/ourCommunity";
+import {
+  OcHero,
+  OcLearners,
+  OcMentors,
+  OcCrew,
+  OcPartners,
+  OcReady,
+} from "components/ourCommunity";
 
 const ContainerStyled = styled(Container)(({ theme }) => ({
   padding: theme.spacing(10, 0),
@@ -62,6 +69,22 @@ const OurCommunity = () => {
       <Grid item xs={12} sx={{ backgroundColor: "primary.blue" }}>
         <ContainerStyled>
           <OcCrew />
+          <OcPartners />
+        </ContainerStyled>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sx={{
+          backgroundImage: `url("/home/hp_h_bg-overlay.svg")`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundColor: "primary.yellow",
+        }}
+      >
+        <ContainerStyled>
+          <OcReady />
         </ContainerStyled>
       </Grid>
     </Grid>

@@ -1,6 +1,50 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, styled, Typography, useMediaQuery } from "@mui/material";
 import { PBPerson, PBAvatar } from "components/ui";
 
+const Crew = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: theme.spacing(10),
+  "& h2": {
+    textAlign: "center",
+    maxWidth: "10ch",
+  },
+}));
+const ContentBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
+  alignItems: "stretch",
+  columnGap: theme.spacing(4),
+  rowGap: theme.spacing(10),
+  [theme.breakpoints.down("lg")]: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-evenly",
+  },
+  "& .pbPerson": {
+    [theme.breakpoints.down("lg")]: {
+      flexBasis: `calc(100% / 2 - ${theme.spacing(4)}px)`,
+      flexShrink: 0,
+      flexGrow: 0,
+    },
+  },
+  "& .more": {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    maxWidth: 352,
+    gap: theme.spacing(6),
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "300px",
+    },
+  },
+}));
 const crew = [
   {
     name: "Saamra Mekuria-Grillo",
@@ -15,11 +59,10 @@ const crew = [
     },
 
     avatar: {
-      image: "/community/demo3.png",
+      image: "/community/demo.png",
       alt: "Project Behemoth Avatar",
       styling: {
-        top: { icon: "twinkleStar", position: "right" },
-        bottom: { icon: "polygon", position: "left", under: true },
+        top: { icon: "LShapeGreen", position: "right" },
       },
     },
     social: {
@@ -43,8 +86,8 @@ const crew = [
       image: "/community/demo3.png",
       alt: "Project Behemoth Avatar",
       styling: {
-        top: { icon: "twinkleStar", position: "right" },
-        bottom: { icon: "polygon", position: "left", under: true },
+        top: { icon: "blackStar", position: "right" },
+        bottom: { icon: "circleLarge", position: "left", under: true },
       },
     },
     social: {
@@ -65,11 +108,10 @@ const crew = [
     },
 
     avatar: {
-      image: "/community/demo3.png",
+      image: "/community/demo2.png",
       alt: "Project Behemoth Avatar",
       styling: {
-        top: { icon: "twinkleStar", position: "right" },
-        bottom: { icon: "polygon", position: "left", under: true },
+        bottom: { icon: "unionGreen", position: "right" },
       },
     },
     social: {
@@ -115,11 +157,10 @@ const crew = [
     },
 
     avatar: {
-      image: "/community/demo3.png",
+      image: "/community/demo2.png",
       alt: "Project Behemoth Avatar",
       styling: {
-        top: { icon: "twinkleStar", position: "right" },
-        bottom: { icon: "polygon", position: "left", under: true },
+        top: { icon: "starGreen", position: "right" },
       },
     },
     social: {
@@ -130,61 +171,55 @@ const crew = [
 ];
 
 const OcCrew = () => {
+  const matches = useMediaQuery("(min-width:760px) and (max-width:1200px)");
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-        gap: "32px",
-        "@media screen and (max-width: 900px)": {
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        },
-      }}
-    >
-      {crew.map(
-        (
-          {
-            avatar: {
-              image,
-              styling: { top, bottom },
+    <Crew>
+      <Typography variant="h1" component="h2" color="primary.yellow">
+        PB Crews
+      </Typography>
+      <ContentBox>
+        {crew.map(
+          (
+            {
+              avatar: {
+                image,
+                styling: { top, bottom },
+              },
+              ...details
             },
-            ...details
-          },
-          index
-        ) => (
-          <PBPerson
-            key={index}
-            av={
-              <PBAvatar
-                image={image}
-                alt="Project Behemoth Avatar"
-                styling={{
-                  top: {
-                    icon: top ? top.icon : "",
-                    position: top ? top.position : "",
-                  },
-                  bottom: {
-                    icon: bottom ? bottom.icon : "",
-                    position: bottom ? bottom.position : "",
-                  },
-                }}
-              />
-            }
-            crew={{
-              name: details.name,
-              designation: details.designation,
-              details: details.about,
-              optional: details.optional,
-              social: details.social,
-            }}
-          />
-        )
-      )}
-    </Box>
+            index
+          ) => (
+            <PBPerson
+              key={index}
+              av={
+                <PBAvatar
+                  image={image}
+                  alt="Project Behemoth Avatar"
+                  styling={{
+                    top: {
+                      icon: top ? top.icon : "",
+                      position: top ? top.position : "",
+                    },
+                    bottom: {
+                      icon: bottom ? bottom.icon : "",
+                      position: bottom ? bottom.position : "",
+                    },
+                  }}
+                />
+              }
+              crew={{
+                name: details.name,
+                designation: details.designation,
+                details: details.about,
+                optional: details.optional,
+                social: details.social,
+              }}
+            />
+          )
+        )}
+        <Box className="more"></Box>
+      </ContentBox>
+    </Crew>
   );
 };
 

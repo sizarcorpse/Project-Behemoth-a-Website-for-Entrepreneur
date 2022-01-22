@@ -47,7 +47,7 @@ const ContentBox = styled(Box)(({ theme }) => ({
 }));
 const crew = [
   {
-    name: "Saamra Mekuria-Grillo",
+    name: "Saamra Mekuria",
     designation: "Co-Founder and CEO",
     about:
       "About Me: Saamra is Formation Ventures’ CEO and Co-Founder. Born in Boston, Saamra has lived in Los Angeles, Oakland, and now is based in San Antonio, TX. Prior to founding Formation Ventures, Saamra was the founding COO of the Pahara Institute, and spent time at Google and Bain & Company. Saamra’s first entrepreneurial venture was co-founding a student club at her high school. She has two sons who she’s trying hard to recruit to be avid 90’s R&B fans like her, who occupy her hours outside of work in exploration of the world. ",
@@ -120,7 +120,7 @@ const crew = [
     },
   },
   {
-    name: "Saamra Mekuria-Grillo",
+    name: "Saamra Mekuria",
     designation: "Co-Founder and CEO",
     about:
       "About Me: Saamra is Formation Ventures’ CEO and Co-Founder. Born in Boston, Saamra has lived in Los Angeles, Oakland, and now is based in San Antonio, TX. Prior to founding Formation Ventures, Saamra was the founding COO of the Pahara Institute, and spent time at Google and Bain & Company. Saamra’s first entrepreneurial venture was co-founding a student club at her high school. She has two sons who she’s trying hard to recruit to be avid 90’s R&B fans like her, who occupy her hours outside of work in exploration of the world. ",

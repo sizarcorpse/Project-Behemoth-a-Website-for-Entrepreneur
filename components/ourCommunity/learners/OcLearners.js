@@ -13,6 +13,11 @@ const Learner = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   gap: theme.spacing(10),
+  paddingTop: theme.spacing(5),
+  paddingBottom: theme.spacing(5),
+  [theme.breakpoints.down("md")]: {
+    paddingTop: theme.spacing(4),
+  },
   "& h2": {
     textAlign: "center",
     maxWidth: "9ch",
@@ -99,7 +104,7 @@ const learners = [
 
 const OcLearners = (props) => {
   const {} = props;
-  const matches = useMediaQuery("(min-width:760px) and (max-width:1200px)");
+  const matches = useMediaQuery("(min-width:760px) and (max-width:1199px)");
 
   return (
     <Learner>

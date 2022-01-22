@@ -29,6 +29,33 @@ const ContainerStyled = styled(Container)(({ theme }) => ({
   },
 }));
 
+const LeanerGrid = styled(Grid)(({ theme }) => ({
+  position: "relative",
+  "&::after": {
+    content: "''",
+    position: "absolute",
+    top: "0%",
+    left: "50%",
+    transform: "translate(-50%, 0%)",
+    width: "100%",
+    height: "100%",
+    maxWidth: "420px",
+    maxHeight: "300px",
+    backgroundImage: `url("/assets/community/LearnersPanelArrow.svg")`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top center",
+    backgroundSize: "contain",
+    zIndex: -1,
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: "360px",
+      maxHeight: "300px",
+    },
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "300px",
+    },
+  },
+}));
+
 const OurCommunity = () => {
   return (
     <Grid container component="main">
@@ -56,11 +83,11 @@ const OurCommunity = () => {
           <OcHero />
         </ContainerStyled>
       </Grid>
-      <Grid item xs={12}>
+      <LeanerGrid item xs={12}>
         <ContainerStyled>
           <OcLearners />
         </ContainerStyled>
-      </Grid>
+      </LeanerGrid>
       <Grid item xs={12} sx={{ backgroundColor: "primary.green" }}>
         <ContainerStyled>
           <OcMentors />

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Box, styled, Typography } from "@mui/material";
 import { Collapse } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import IconButton from "@mui/material/IconButton";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { PBButton } from "components/ui";
@@ -23,6 +22,18 @@ const PBPersonStyled = styled(Box)(({ theme, isLearner, isMentor }) => ({
   gap: theme.spacing(6),
   [theme.breakpoints.down("md")]: {
     maxWidth: "300px",
+  },
+
+  animation: "hi 500ms ease",
+  "@keyframes hi": {
+    "0%": {
+      opacity: 0,
+      transform: "translateY(50px)",
+    },
+    "100%": {
+      opacity: 1,
+      transform: "translateY(0px)",
+    },
   },
 }));
 
@@ -57,7 +68,7 @@ const CrewBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "flex-start",
-  minHeight: 274,
+  minHeight: 220,
   gap: theme.spacing(2),
   padding: theme.spacing(4, 0),
   borderStyle: "solid",
@@ -68,6 +79,7 @@ const CrewBox = styled(Box)(({ theme }) => ({
   },
   " & .buttonToggle": {
     display: "flex",
+    alignItems: "center",
   },
   "& .contents": {
     display: "flex",
@@ -134,6 +146,8 @@ const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
+  display: "flex",
+  alignItems: "center",
   transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
   marginLeft: "auto",
   transition: theme.transitions.create("transform", {
@@ -168,8 +182,9 @@ const Crew = (crew) => {
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
+          className="expandMore"
         >
-          <ExpandMoreIcon sx={{ fontSize: 24 }} />
+          <AddCircleIcon sx={{ fontSize: 24 }} />
         </ExpandMore>
       </Box>
       <Collapse in={expanded} timeout={1000}>

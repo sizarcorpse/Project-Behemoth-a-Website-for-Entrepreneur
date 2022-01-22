@@ -17,6 +17,11 @@ const Mentors = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   gap: theme.spacing(10),
+  paddingTop: theme.spacing(5),
+  paddingBottom: theme.spacing(5),
+  [theme.breakpoints.down("md")]: {
+    paddingTop: theme.spacing(4),
+  },
   "& h2": {
     textAlign: "center",
     maxWidth: "10ch",

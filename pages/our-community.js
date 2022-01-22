@@ -55,6 +55,58 @@ const LeanerGrid = styled(Grid)(({ theme }) => ({
     },
   },
 }));
+const MentorGrid = styled(Grid)(({ theme }) => ({
+  position: "relative",
+  zIndex: 1,
+  "&::before": {
+    content: "''",
+    position: "absolute",
+    top: "00%",
+    left: "58%",
+    transform: "translate(-58%, 0%)",
+    width: "100%",
+    height: "100%",
+    maxWidth: "250px",
+    maxHeight: "322px",
+    backgroundImage: `url("/assets/community/MentorsPanelArrow.svg")`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top center",
+    backgroundSize: "contain",
+    zIndex: -1,
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: "220px",
+    },
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "180px",
+    },
+  },
+}));
+const CrewGrid = styled(Grid)(({ theme }) => ({
+  position: "relative",
+  zIndex: 1,
+  "&::before": {
+    content: "''",
+    position: "absolute",
+    top: "00%",
+    left: "42%",
+    transform: "translate(-42%, 0%)",
+    width: "100%",
+    height: "100%",
+    maxWidth: "223px",
+    maxHeight: "268px",
+    backgroundImage: `url("/assets/community/CrewPanelArrow.svg")`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top center",
+    backgroundSize: "contain",
+    zIndex: -1,
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: "220px",
+    },
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "160px",
+    },
+  },
+}));
 
 const OurCommunity = () => {
   return (
@@ -88,17 +140,17 @@ const OurCommunity = () => {
           <OcLearners />
         </ContainerStyled>
       </LeanerGrid>
-      <Grid item xs={12} sx={{ backgroundColor: "primary.green" }}>
+      <MentorGrid item xs={12} sx={{ backgroundColor: "primary.green" }}>
         <ContainerStyled>
           <OcMentors />
         </ContainerStyled>
-      </Grid>
-      <Grid item xs={12} sx={{ backgroundColor: "primary.blue" }}>
+      </MentorGrid>
+      <CrewGrid item xs={12} sx={{ backgroundColor: "primary.blue" }}>
         <ContainerStyled>
           <OcCrew />
           <OcPartners />
         </ContainerStyled>
-      </Grid>
+      </CrewGrid>
       <Grid
         item
         xs={12}

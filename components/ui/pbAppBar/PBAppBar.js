@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PropTypes from "prop-types";
@@ -10,10 +11,13 @@ import {
   Box,
   Slide,
   styled,
+  IconButton,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { PBDrawer } from "components/ui";
+
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   padding: theme.spacing(0),
 }));
@@ -134,6 +138,21 @@ const PBAppBar = (props) => {
   const { children } = props;
   const matches = useMediaQuery(useTheme().breakpoints.down("md"));
 
+  const [state, setState] = useState({
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
   return (
     <>
       <HideOnScroll {...props}>
@@ -143,29 +162,41 @@ const PBAppBar = (props) => {
         >
           <ToolbarStyled>
             <Box sx={{ display: "flex", flexGrow: 1 }}>
-              <Image
-                src="/assets/logo/sl.svg"
-                width={100}
-                height={35}
-                alt="project behemoth"
-                priority={true}
-              />
+              <Link href="/">
+                <a>
+                  <Image
+                    src="/assets/logo/sl.svg"
+                    width={100}
+                    height={35}
+                    alt="project behemoth"
+                    priority={true}
+                  />
+                </a>
+              </Link>
             </Box>
             <MenuBox>
               {matches ? (
                 <Stack
-                  spacing={2}
                   direction="row"
-                  spacing={4}
                   justifyContent="flex-end"
                   alignItems="center"
                   className="stackItems"
                 >
-                  <MenuIcon fontSize="large" sx={{ color: "primary.black" }} />
+                  <IconButton
+                    disableFocusRipple={true}
+                    disableRipple={true}
+                    onClick={toggleDrawer("right", true)}
+                  >
+                    <img src="/assets/appBar/menuIcon.svg" />
+                  </IconButton>
+                  <PBDrawer
+                    state={state}
+                    toggleDrawer={toggleDrawer}
+                    navigationItems={navigationItems}
+                  />
                 </Stack>
               ) : (
                 <Stack
-                  spacing={2}
                   direction="row"
                   spacing={4}
                   justifyContent="flex-end"

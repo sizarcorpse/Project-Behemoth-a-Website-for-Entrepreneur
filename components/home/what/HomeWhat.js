@@ -29,7 +29,8 @@ const ImageBox = styled(Box)(({ theme }) => ({
     display: "block !important",
   },
 }));
-const ContentBox = styled(Box)(({ theme }) => ({
+const ContentBox = styled(Box)(({ theme, isMd }) => ({
+  position: "relative",
   flex: "1 1 calc(65%)",
   display: "flex",
   flexDirection: "column",
@@ -97,6 +98,26 @@ const ContentBox = styled(Box)(({ theme }) => ({
       },
     },
   },
+  "&::after": {
+    content: !isMd ? "''" : "none",
+    position: "absolute",
+    top: "calc(100% - 100px)",
+    left: "10%",
+    transform: "translate(-50%, 0%)",
+    width: "100%",
+    height: "100%",
+    maxWidth: "71px",
+    maxHeight: "210px",
+    backgroundImage: `url("/assets/home/snakeArrow.svg")`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top center",
+    backgroundSize: "contain",
+    zIndex: 1,
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: "71px",
+      maxHeight: "210px",
+    },
+  },
 }));
 
 function HomeWhat() {
@@ -129,7 +150,7 @@ function HomeWhat() {
           />
         </Box>
       </ImageBox>
-      <ContentBox>
+      <ContentBox isMd={md}>
         <Container className="container">
           <Typography variant="h5" component="p" color="primary.orange">
             WHAT

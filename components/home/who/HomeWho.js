@@ -19,10 +19,10 @@ const ContentBox = styled(Box)(({ theme, barHeight }) => ({
   flexDirection: "row",
   alignItems: "flex-start",
   justifyContent: "space-between",
-  gap: theme.spacing(5),
+  gap: theme.spacing(6),
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
-    gap: theme.spacing(6),
+    gap: theme.spacing(4),
   },
 
   "& .item": {

@@ -43,12 +43,14 @@ let socials = [
 
 const PBSocial = () => {
   return (
-    <Box>
+    <Box className="pbSocial">
       {socials.map((social, index) => (
         <Link href={social.url} key={index}>
           <a target="_blank">
             <Tooltip title={social.title} placement="top" key={index}>
-              <IconButton>{cloneElement(social.component)}</IconButton>
+              <IconButton>
+                {cloneElement(social.component, { sx: { color: "#373639" } })}
+              </IconButton>
             </Tooltip>
           </a>
         </Link>

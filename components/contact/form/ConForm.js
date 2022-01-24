@@ -1,12 +1,15 @@
 import React from "react";
-import { Box, styled, Typography } from "@mui/material";
+import { Box, styled, Typography, Stack } from "@mui/material";
 import FormBase from "./FormBase";
-
-import { PBSocial } from "components/ui";
+import ConInfo from "./ConInfo";
 
 const Contact = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
+  "@media (max-width: 820px)": {
+    flexDirection: "column",
+    gap: theme.spacing(6),
+  },
   "& .information": {
     flexBasis: "50%",
   },
@@ -20,6 +23,9 @@ const Contact = styled(Box)(({ theme }) => ({
     gap: theme.spacing(4),
     [theme.breakpoints.down("lg")]: {
       padding: theme.spacing(0, 4),
+      "@media (max-width: 820px)": {
+        padding: theme.spacing(0, 0),
+      },
     },
   },
 }));
@@ -28,7 +34,7 @@ const ConForm = () => {
   return (
     <Contact>
       <Box className="information">
-        <PBSocial />
+        <ConInfo />
       </Box>
       <Box className="form">
         <Typography variant="h2" color="primary.blue">

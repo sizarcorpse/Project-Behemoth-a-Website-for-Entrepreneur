@@ -2,6 +2,8 @@ import React from "react";
 import { Box, styled, Typography } from "@mui/material";
 import FormBase from "./FormBase";
 
+import { PBSocial } from "components/ui";
+
 const Contact = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
@@ -25,7 +27,9 @@ const Contact = styled(Box)(({ theme }) => ({
 const ConForm = () => {
   return (
     <Contact>
-      <Box className="information"></Box>
+      <Box className="information">
+        <PBSocial />
+      </Box>
       <Box className="form">
         <Typography variant="h2" color="primary.blue">
           Lets create<br></br>progress together

@@ -45,6 +45,12 @@ const ContentBox = styled(Box)(({ theme }) => ({
         padding: theme.spacing(6, 0),
         textDecoration: "none",
         color: theme.palette.primary.white,
+        [theme.breakpoints.down("md")]: {
+          padding: theme.spacing(4, 0),
+        },
+        [theme.breakpoints.down("sm")]: {
+          padding: theme.spacing(2, 0),
+        },
       },
       "&::after": {
         content: "''",

@@ -131,7 +131,7 @@ let navigationItems = [
   { title: "How It Works", url: "/how-it-works", type: "link", order: 1 },
   { title: "Our Community", url: "/our-community", type: "link", order: 2 },
   { title: "Our Partners", url: "/our-partners", type: "link", order: 3 },
-  { title: "Get In Touch", url: "/get-in-touch", type: "button", order: 4 },
+  { title: "Get In Touch", url: "/contact", type: "button", order: 4 },
 ];
 
 const PBAppBar = (props) => {

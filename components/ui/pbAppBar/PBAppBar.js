@@ -1,22 +1,22 @@
-import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import {
+  AppBar,
+  Box,
+  IconButton,
+  Slide,
+  Stack,
+  styled,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+  useScrollTrigger,
+  useTheme,
+} from "@mui/material";
+import { PBDrawer } from "components/ui";
 import Image from "next/image";
 import Link from "next/link";
 import PropTypes from "prop-types";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Stack,
-  useScrollTrigger,
-  Box,
-  Slide,
-  styled,
-  IconButton,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import { PBDrawer } from "components/ui";
+import { useState } from "react";
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   padding: theme.spacing(0),
@@ -130,8 +130,7 @@ function HideOnScroll(props) {
 let navigationItems = [
   { title: "How It Works", url: "/how-it-works", type: "link", order: 1 },
   { title: "Our Community", url: "/our-community", type: "link", order: 2 },
-  { title: "Our Partners", url: "/our-partners", type: "link", order: 3 },
-  { title: "Get In Touch", url: "/contact", type: "button", order: 4 },
+  { title: "Get In Touch", url: "/contact", type: "button", order: 3 },
 ];
 
 const PBAppBar = (props) => {

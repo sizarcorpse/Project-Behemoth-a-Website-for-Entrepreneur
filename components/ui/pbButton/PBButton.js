@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import Link from "next/link";
 import { Box, styled } from "@mui/material";
+import Link from "next/link";
+import PropTypes from "prop-types";
 
 const arrows = {
   yellow: { link: "/assets/arrow/arrow_yellow.svg", color: "#FFD857" },
@@ -46,7 +46,7 @@ const PBButton = (props) => {
       color={
         arrows[color] ? arrows[color]["color"] : arrows["default"]["color"]
       }
-      bold={bold}
+      bold={bold ? "true" : "false"}
     >
       <Link href={linkTo ? linkTo : "#"}>
         {children ? children : "Click Me"}
@@ -58,6 +58,10 @@ const PBButton = (props) => {
       />
     </PBButtonStyled>
   );
+};
+
+PBButton.defaultProps = {
+  bold: false,
 };
 
 PBButton.propTypes = {

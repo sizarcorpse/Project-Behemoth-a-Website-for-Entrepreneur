@@ -1,13 +1,7 @@
+import { Container, Grid, styled } from "@mui/material";
 import Head from "next/head";
-import {
-  Grid,
-  Container,
-  styled,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
 
-import { ConHero, ConForm } from "components/contact";
+import { ConForm, ConHero } from "components/contact";
 
 const ContainerStyled = styled(Container)(({ theme }) => ({
   padding: theme.spacing(10, 0),

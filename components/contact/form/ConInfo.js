@@ -1,10 +1,10 @@
-import React from "react";
-import { Box, Stack, styled, Typography } from "@mui/material";
-import PersonIcon from "@mui/icons-material/Person";
-import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PersonIcon from "@mui/icons-material/Person";
+import PersonSearchIcon from "@mui/icons-material/PersonSearch";
+import { Box, Stack, styled, Typography } from "@mui/material";
+import React from "react";
 
 import { PBSocial } from "components/ui";
 
@@ -67,12 +67,12 @@ const information = {
   name: "ramiz imran sizar",
   alias: "sizarcorpse",
   phone: {
-    placeholder: "+880 1927 366 856",
-    value: 8801927366856,
+    placeholder: "+880 0000 000 000",
+    value: 8800000000000,
   },
   emails: [
     {
-      value: "sizarcorpse.gmail.com",
+      value: "sizarcorpse@gmail.com",
     },
   ],
   address: "Jashore, Bangladesh",
@@ -113,13 +113,7 @@ const ConInfo = () => {
           I love to hear from you! Feel free to contact me with any questions.
         </Typography>
       </Box>
-      <Stack
-        gap={4}
-        direction="column"
-        gap={"8px"}
-        flexGrow={1}
-        className="stack"
-      >
+      <Stack gap={1} direction="column" flexGrow={1} className="stack">
         <IconText icon={<PersonIcon />} text={information.name} />
         <IconText icon={<PersonSearchIcon />} text={information.alias} />
         <IconText

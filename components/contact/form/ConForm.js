@@ -1,7 +1,7 @@
+import { Box, Stack, styled, Typography } from "@mui/material";
 import React from "react";
-import { Box, styled, Typography, Stack } from "@mui/material";
-import FormBase from "./FormBase";
 import ConInfo from "./ConInfo";
+import FormBase from "./FormBase";
 
 const Contact = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -40,7 +40,7 @@ const ConForm = () => {
         <Typography variant="h2" color="primary.blue">
           Lets create<br></br>progress together
         </Typography>
-        <Typography variant="subtitle2" color="primary.black">
+        <Typography variant="body2" color="primary.black">
           A developer shaping ideas into products. We help startups and
           enterprises invent, build and launch their next project.
         </Typography>

@@ -1,14 +1,14 @@
-import { useState, useRef, useEffect } from "react";
-import PropTypes from "prop-types";
-import Image from "next/image";
 import {
   Box,
   styled,
   Typography,
-  useTheme,
   useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { PBButton } from "components/ui";
+import Image from "next/image";
+import PropTypes from "prop-types";
+import { useEffect, useRef, useState } from "react";
 
 const How = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -16,7 +16,7 @@ const How = styled(Box)(({ theme }) => ({
   gap: theme.spacing(4),
 }));
 
-const ContentBox = styled(Box)(({ theme, barHeight }) => ({
+const ContentBox = styled(Box)(({ theme, barheight }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
@@ -69,7 +69,7 @@ const ContentBox = styled(Box)(({ theme, barHeight }) => ({
         width: 2,
         height: 2,
 
-        borderBottom: `${barHeight}px solid ${theme.palette.primary.black}`,
+        borderBottom: `${barheight}px solid ${theme.palette.primary.black}`,
         zIndex: -1,
       },
       [theme.breakpoints.down("md")]: {
@@ -131,7 +131,7 @@ const HomeHow = (props) => {
       <Typography variant="H5" component="p" color="primary.yellow">
         HOW
       </Typography>
-      <ContentBox ref={totalContent} barHeight={barHeight}>
+      <ContentBox ref={totalContent} barheight={barHeight}>
         {hows.map((how, index) => (
           <Box className="item" key={index}>
             <Typography

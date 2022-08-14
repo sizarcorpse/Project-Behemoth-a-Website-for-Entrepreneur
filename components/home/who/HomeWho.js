@@ -1,12 +1,12 @@
-import PropTypes from "prop-types";
-import Image from "next/image";
 import {
   Box,
   styled,
   Typography,
-  useTheme,
   useMediaQuery,
+  useTheme,
 } from "@mui/material";
+import Image from "next/image";
+import PropTypes from "prop-types";
 
 const Who = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -14,7 +14,7 @@ const Who = styled(Box)(({ theme }) => ({
   gap: theme.spacing(4),
 }));
 
-const ContentBox = styled(Box)(({ theme, barHeight }) => ({
+const ContentBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   alignItems: "flex-start",

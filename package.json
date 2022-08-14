@@ -1,5 +1,15 @@
 {
-  "name": "frontend",
+  "name": "project-behemoth-a-website-for-entrepreneur",
+  "description": "A website for entrepreneurs",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sizarcorpse/Project-Behemoth-a-Website-for-Entrepreneur.git"
+  },
+  "author": {
+    "name": "Sizar Corpse",
+    "email": "sizarcorpse@gmail.com"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",

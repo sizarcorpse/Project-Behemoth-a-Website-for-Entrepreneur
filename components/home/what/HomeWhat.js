@@ -1,18 +1,18 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
-import Image from "next/image";
+import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 import {
   Box,
-  styled,
   Container,
-  Typography,
   List,
   ListItem,
   ListItemIcon,
-  useTheme,
+  styled,
+  Typography,
   useMediaQuery,
+  useTheme,
 } from "@mui/material";
-import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
+import Image from "next/image";
+import PropTypes from "prop-types";
+import { useState } from "react";
 const What = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
@@ -29,7 +29,7 @@ const ImageBox = styled(Box)(({ theme }) => ({
     display: "block !important",
   },
 }));
-const ContentBox = styled(Box)(({ theme, isMd }) => ({
+const ContentBox = styled(Box)(({ theme, ismd }) => ({
   position: "relative",
   flex: "1 1 calc(65%)",
   display: "flex",
@@ -99,7 +99,7 @@ const ContentBox = styled(Box)(({ theme, isMd }) => ({
     },
   },
   "&::after": {
-    content: !isMd ? "''" : "none",
+    content: !ismd ? "''" : "none",
     position: "absolute",
     top: "calc(100% - 100px)",
     left: "10%",
@@ -150,7 +150,7 @@ function HomeWhat() {
           />
         </Box>
       </ImageBox>
-      <ContentBox isMd={md}>
+      <ContentBox ismd={md}>
         <Container className="container">
           <Typography variant="h5" component="p" color="primary.orange">
             WHAT

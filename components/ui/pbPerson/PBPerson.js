@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { Box, styled, Typography } from "@mui/material";
-import { Collapse } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import IconButton from "@mui/material/IconButton";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Box, Collapse, styled, Typography } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
 import { PBButton } from "components/ui";
+import { useState } from "react";
 
-const PBPersonStyled = styled(Box)(({ theme, isLearner, isMentor }) => ({
+const PBPersonStyled = styled(Box)(({ theme, islearner, ismentor }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "flex-start",
@@ -14,9 +13,9 @@ const PBPersonStyled = styled(Box)(({ theme, isLearner, isMentor }) => ({
   maxWidth: 352,
   borderStyle: "solid",
   borderWidth: "0px 0px 2px 0px",
-  borderColor: isLearner
+  borderColor: islearner
     ? theme.palette.primary.blue
-    : isMentor
+    : ismentor
     ? theme.palette.primary.black
     : "transparent",
   gap: theme.spacing(6),
@@ -224,9 +223,9 @@ const PBPerson = (props) => {
 
   return (
     <PBPersonStyled
-      isLearner={learner && true}
-      isMentor={mentors && true}
-      isCrew={crew && true}
+      islearner={learner && "true"}
+      ismentor={mentors && "true"}
+      iscrew={crew && "true"}
       className="pbPerson"
     >
       <Box sx={{ maxWidth: 300 }}>{av}</Box>

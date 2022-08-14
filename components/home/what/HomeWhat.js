@@ -150,7 +150,7 @@ function HomeWhat() {
           />
         </Box>
       </ImageBox>
-      <ContentBox ismd={md}>
+      <ContentBox ismd={md.toString()}>
         <Container className="container">
           <Typography variant="h5" component="p" color="primary.orange">
             WHAT
